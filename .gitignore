@@ -1,0 +1,5 @@
+﻿backend/mlruns/
+ml_pipeline/outputs/
+*.pkl
+.env
+.env.*

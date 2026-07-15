@@ -1,0 +1,25 @@
+{
+    "model_name": "Baseline_XGB",
+    "classifier": "XGB",
+    "embedding_model": "TF-IDF",
+    "dataset": "go_emotions",
+    "training_date": "2026-07-15T20:35:47.098129Z",
+    "git_commit_hash": "unknown",
+    "python_version": "3.11.15 (main, Jul 14 2026, 02:08:37) [GCC 14.2.0]",
+    "sklearn_version": "1.4.1.post1",
+    "torch_version": "2.2.1+cu121",
+    "sentence_transformers_version": "2.5.1",
+    "training_time": 72.02310347557068,
+    "inference_time": 0.06658625602722168,
+    "accuracy": 0.437,
+    "precision": 0.38080666788806705,
+    "recall": 0.437,
+    "f1": 0.3820268673307154,
+    "roc_auc": null,
+    "random_seed": 42,
+    "configuration": {
+        "max_samples": 5000,
+        "batch_size": 32,
+        "device": "cpu"
+    }
+}

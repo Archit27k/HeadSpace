@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: headspace-frontend
+  labels:
+    app: headspace-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: headspace-frontend
+  template:
+    metadata:
+      labels:
+        app: headspace-frontend
+    spec:
+      containers:
+      - name: frontend
+        image: headspace-frontend:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
+        envFrom:
+        - secretRef:
+            name: headspace-secrets
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "250m"
