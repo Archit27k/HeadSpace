@@ -3,8 +3,7 @@ import sys
 
 # Hack to allow importing from ml_pipeline temporarily for the placeholder
 # In production, the ML pipeline might be a separate service or installed as a package.
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../ml_pipeline"))) # local
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../ml_pipeline"))) # docker
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../"))) # local root
 
 from ml_pipeline.predict import EmotionPredictor
 
