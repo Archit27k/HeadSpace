@@ -5,10 +5,8 @@ from app.models.database import Base, engine
 
 @pytest.fixture(scope="module")
 def client():
-    Base.metadata.create_all(bind=engine)
     with TestClient(app) as c:
         yield c
-    Base.metadata.drop_all(bind=engine)
 
 def test_read_main(client):
     response = client.get("/")
