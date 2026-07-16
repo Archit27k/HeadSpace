@@ -2,7 +2,8 @@ import pytest
 from app.ai.graph.builder import build_orchestration_graph
 from app.ai.graph.state import GraphState
 
-def test_graph_execution():
+@pytest.mark.asyncio
+async def test_graph_execution():
     """Tests the full orchestration layer graph from start to end."""
     graph = build_orchestration_graph()
     
@@ -23,7 +24,7 @@ def test_graph_execution():
     }
     
     # Execute the graph
-    result = graph.invoke(initial_state)
+    result = await graph.ainvoke(initial_state)
     
     # Verify the trace ran through all the major expected nodes sequentially based on our routing
     # Expected Nodes: 

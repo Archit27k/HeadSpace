@@ -5,6 +5,7 @@ from app.ai.ingestion.chunker import DocumentChunker
 
 def test_qdrant_mock_search():
     store = QdrantVectorStore()
+    store.client = None # Force mock mode for testing
     
     res = store.search("stress", [0.1]*384, "cbt_documents", top_k=2)
     assert len(res) == 1
